@@ -1,0 +1,5 @@
+kafka-python
+pymongo
+cassandra-driver
+redis
+neo4j
