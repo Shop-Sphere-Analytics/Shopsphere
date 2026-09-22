@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pymongo
+redis
+neo4j
+cassandra-driver
+twisted
