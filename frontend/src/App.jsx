@@ -97,6 +97,10 @@ function App() {
 
             return updated.slice(-12);
           });
+
+          if (data.event === "new_order") {
+            loadDashboard();
+          }
         }
       };
 
