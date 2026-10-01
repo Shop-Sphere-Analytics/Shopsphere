@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   LineChart,
   Line,
@@ -16,6 +16,12 @@ function App() {
   const [revenue, setRevenue] = useState(null);
   const [activeUsers, setActiveUsers] = useState(null);
   const [topProducts, setTopProducts] = useState([]);
+  const [liveUpdates, setLiveUpdates] = useState(true);
+  const liveUpdatesRef = useRef(true);
+
+  function toggleLiveUpdates() {
+    setLiveUpdates((previous) => { const next = previous ? false : true; liveUpdatesRef.current = next; return next; });
+  }
   const [orders, setOrders] = useState([]);
   const [liveData, setLiveData] = useState([]);
 
@@ -64,6 +70,8 @@ function App() {
       socket.onmessage = (event) => {
         const data = JSON.parse(event.data);
 
+        if (liveUpdatesRef.current === false) return;
+
         if (
           data.revenue_today !== undefined &&
           data.orders_today !== undefined &&
@@ -111,6 +119,10 @@ function App() {
           <h1>ShopSphere Analytics</h1>
           <p>Real-Time Business Analytics Dashboard</p>
         </div>
+
+        <button className="live-toggle" onClick={toggleLiveUpdates}>
+          {liveUpdates ? "🟢 Live Updates: ON" : "⚪ Live Updates: OFF"}
+        </button>
 
         <div className="status">
           <span

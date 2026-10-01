@@ -182,3 +182,6 @@
     border-right-color: var(--border);
   }
 }
+
+
+.live-toggle { padding: 10px 16px; border: 1px solid #334155; border-radius: 10px; background: #111827; color: #e5e7eb; cursor: pointer; font-weight: 600; } .live-toggle:hover { opacity: 0.9; }
