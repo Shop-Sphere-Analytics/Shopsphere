@@ -43,8 +43,8 @@ function App() {
 
       setRevenue(revenueData);
       setActiveUsers(usersData.active_users);
-      setTopProducts(productsData);
-      setOrders(ordersData);
+      setTopProducts(productsData.top_products);
+      setOrders(ordersData.orders);
 
       setApiStatus("Connected");
     } catch (error) {
