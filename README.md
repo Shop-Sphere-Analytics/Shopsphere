@@ -158,7 +158,7 @@ Full request and response formats: [`docs/api-contract.md`](docs/api-contract.md
 
 | Person | Stage | Folder |
 |---|---|---|
-| NIMRAH R | Data generation and Kafka | `producer/` |
+| NIMRAH N| Data generation and Kafka | `producer/` |
 | SAKSHI S NAIK | Stream processing and 4 NoSQL databases | `stream_processor/` |
 | DISHA G | FastAPI backend and WebSocket | `backend/` |
 | DHARSHAN | React dashboard and Docker Compose | `frontend/`, `docker-compose.yml` |
