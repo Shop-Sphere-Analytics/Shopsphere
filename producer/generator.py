@@ -38,6 +38,6 @@ def generate_event():
         }
 
 if __name__ == "__main__":
-    for _ in range(5):
+    while True:
         print(generate_event())
         time.sleep(1)
