@@ -37,10 +37,7 @@ sessions
 { "type": "session", "session_id": "481df8fb", "user_id": "USR389", "status": "active", "timestamp": "2004-01-17T11:49:20" }
 ```
 `status` is one of: `active`, `idle`, `logged_out`.
-> Note: timestamps are randomly generated fake data scattered across past and
-> future years — don't build any "last hour" / "today" trend logic off this
-> field. Anything "live" on the dashboard should be driven by processing
-> order (when the consumer handles the event), not the embedded timestamp.
+> Note: Timestamps are the current UTC time at generation. The backend still sorts orders by MongoDB _id (insertion order), which is robust even if the producer's clock or format changes.
 >
 > **Downstream note:** Person C's backend solves this for order recency by
 > sorting MongoDB's `orders` collection by `_id` (descending) instead of the

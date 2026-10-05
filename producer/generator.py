@@ -16,7 +16,7 @@ def generate_event():
             "type": "order",
             "order_id": f"ORD{random.randint(1000, 9999)}",
             "user_id": f"USR{random.randint(100, 999)}",
-            "product_id": f"P{random.randint(10, 50)}",
+            "product_id": f"P{random.randint(10, 19)}",
             "amount": round(random.uniform(10.0, 500.0), 2),
             "timestamp": timestamp
         }

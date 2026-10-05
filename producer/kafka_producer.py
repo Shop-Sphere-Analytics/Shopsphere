@@ -20,6 +20,6 @@ try:
         
         producer.send(topic_name, value=event)
         print(f"Sent to topic '{topic_name}': {event}")
-        time.sleep(2)
+        time.sleep(0.5)
 except KeyboardInterrupt:
     print("\nProducer stopped.")

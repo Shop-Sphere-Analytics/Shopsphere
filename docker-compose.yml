@@ -1,3 +1,9 @@
+# NOTE: frontend/ is intentionally NOT containerized. It's a Vite dev server,
+# started manually with `npm run dev` after the services below are running.
+# The dashboard's API/WebSocket calls go to http://localhost:8000, which
+# works identically whether the frontend is served by Vite or a container,
+# since the browser resolves that URL either way — containerizing it would
+# add deployment complexity with no functional benefit for this project.
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
