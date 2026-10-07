@@ -83,20 +83,20 @@ Wait until this command succeeds. Starting the consumer earlier can fail.
 ```bash
 cd stream_processor
 pip install -r requirements.txt
-python seed_products.py
+py seed_products.py
 ```
 
 **4. Start the stream processor**
 ```bash
 cd stream_processor
-python consumer.py
+py consumer.py
 ```
 
 **5. Start the producer**
 ```bash
 cd producer
 pip install -r requirements.txt
-python kafka_producer.py
+py kafka_producer.py
 ```
 
 **6. Start the dashboard**
