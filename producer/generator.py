@@ -4,9 +4,10 @@ import time
 from faker import Faker
 
 fake = Faker()
-
+FUNNEL_PAGES = ["home", "product_detail", "cart", "checkout"]
+FUNNEL_WEIGHTS = [50, 30, 14, 6]
 def generate_event():
-    event_type = random.choice(["order", "click", "session"])
+    event_type = random.choices(["order", "click", "session"], weights=[25, 50, 25])[0]
     
     # Stamp the exact current UTC time instead of arbitrary historical dates
     timestamp = datetime.now(timezone.utc).isoformat()
@@ -25,7 +26,7 @@ def generate_event():
             "type": "click",
             "event_id": fake.uuid4()[:8],
             "user_id": f"USR{random.randint(100, 999)}",
-            "page": random.choice(["home", "product_detail", "cart", "checkout"]),
+            "page": random.choices(FUNNEL_PAGES, weights=FUNNEL_WEIGHTS)[0],
             "timestamp": timestamp
         }
     else:
